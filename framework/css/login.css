@@ -1,0 +1,68 @@
+/*
+* PlasticBox web framework for PHP
+* Copyright (C) PlasticBox Dev Team
+*
+* This program is free software; you can redistribute it and/or modify
+* it under the terms of the GNU General Public License version 2 as
+* published by the Free Software Foundation.
+* 
+* Author: Alexander Yukhnenko
+* 
+*/
+
+@CHARSET "UTF-8";
+
+div#pb-version {
+	text-align			: center;
+	font-size			: 10pt;
+	color				: #454565;
+}
+
+div#login-title {
+	text-align			: center;
+	margin				: 50px 0;
+	font-size			: 16pt;
+	color				: #1111EE;
+}
+
+div#login-form {
+	margin					: auto;
+	padding					: 20px;
+	width					: 300px;
+	background-color		: #EEEEEE;
+	-webkit-border-radius	: 12px;
+	-moz-border-radius		: 12px;
+	border-radius			: 12px;
+}
+
+div#login-form-submit {
+	text-align			: center;
+	margin				: 20px 0;
+}
+
+div#login-form-version {
+	font-size			: 10pt;
+	color				: #454565;
+}
+
+table#login-form-table tr td {
+	text-align			: right;
+}
+
+div#login-form-label {
+	font-size			: 12pt;
+	color				: #1111EE;
+	margin-bottom		: 20px;
+	text-decoration		: underline;
+	text-align			: center;
+}
+
+div#login-form-error {
+	font-size			: 11pt;
+	color				: #EE4455;
+	text-align			: center;
+}
+
+input.login-form-edit {
+	width				: 150px;
+}

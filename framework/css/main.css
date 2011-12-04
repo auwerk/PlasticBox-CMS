@@ -1,0 +1,76 @@
+/*
+* PlasticBox web framework for PHP
+* Copyright (C) PlasticBox Dev Team
+*
+* This program is free software; you can redistribute it and/or modify
+* it under the terms of the GNU General Public License version 2 as
+* published by the Free Software Foundation.
+* 
+* Author: Alexander Yukhnenko
+* 
+*/
+
+@CHARSET "UTF-8";
+
+div#pb-version {
+	text-align			: center;
+	font-size			: 10pt;
+	color				: #454565;
+}
+
+a.static-link, a.static-link:visited {
+	color				: blue;
+}
+
+
+/* TOP MENU */
+
+div#top-menu {
+	background-color	: #F6F6F6;
+	padding				: 15px;
+	text-align			: center;
+}
+
+div.top-menu-button {
+	display				: inline-block;
+	text-align			: center;
+	background-color	: #EDECD8;
+	padding				: 5px 10px;
+	margin				: 2px 3px;
+	cursor				: pointer;
+}
+
+div.top-menu-button:hover {
+	color				: #0000FF;
+}
+
+div.top-menu-button-active {
+	background-color	: #D8D9ED;
+}
+
+/* FOOTER */
+
+div#footer-version {
+	margin				: 25px 0;
+	padding				: 10px 0;
+	text-align			: center;
+	background-color	: #F2F2F2;
+}
+
+/* TABLE */
+
+table.admin-table {
+	width				: 100%;
+}
+
+table.admin-table th {
+	background-color	: #09C6ED;
+	text-align			: center;
+	padding				: 4px;
+}
+
+table.admin-table td {
+	background-color	: #F1F2D3;
+	text-align			: center;
+	padding				: 4px;
+}
