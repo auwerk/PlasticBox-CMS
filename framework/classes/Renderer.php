@@ -58,9 +58,10 @@ final class Renderer {
 		$module = Module::getInstance();
 		$cache = Cache::getInstance();
 		if ($cache->start($module->getName())) {
+			$this->assign("cacheId", $cache->getId());
 			$module->execute();
 		}
-		$this->assign("moduleHTML",$cache->spew(false));
+		$this->assign("moduleHTML", $cache->spew(false));
 	}
 
 	protected function renderHead($title="") {

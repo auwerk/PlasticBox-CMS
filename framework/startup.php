@@ -71,6 +71,12 @@ else if ($opt == "logout") {
 	// Logout
 	User::getInstance()->logout();
 }
+else if ($opt == "clearcache") {
+	// Cache cleanup
+	$moduleName = Request::get("mod", false);
+	Cache::clear($moduleName);
+	Util::redirect("index.php");
+}
 else {
 	if (defined("_ADMIN_MODE")) {
 		// Check if user is administrator

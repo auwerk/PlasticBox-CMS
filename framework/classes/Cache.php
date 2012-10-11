@@ -11,6 +11,7 @@ final class Cache {
 	private $_reqDeps = array();
 	private $_cacheFile = null;
 	private $_content = false;
+	private $_cacheId = "";
 
 	private function __construct() {
 		$this->_disabled = defined("_ADMIN_MODE") || !Configuration_CMS::$_cacheModules;
@@ -25,11 +26,11 @@ final class Cache {
 	public function start($moduleName = false) {
 		$this->_content = false;
 		if (count($this->_reqDeps) > 0 && !$this->_disabled) {
-			$cacheId = "";
+			$this->_cacheId = "";
 			foreach ($this->_reqDeps as $reqDep) {
-				$cacheId .= $reqDep.Request::get($reqDep, "NONE");
+				$this->_cacheId .= $reqDep.Request::get($reqDep, "NONE");
 			}
-			$cacheHash = md5($cacheID);
+			$cacheHash = md5($this->_cacheId);
 
 			/* Determine cache directory and check if it exists */
 			if ($moduleName !== false) {
@@ -70,6 +71,19 @@ final class Cache {
 			echo $this->_content;
 		}
 		return $this->_content;
+	}
+
+	public static function clear($moduleName = false) {
+		if ($moduleName !== false) {
+			$cacheDir = PATH_CACHE.DS."modules".DS.strtolower($moduleName);
+		} else {
+			$cacheDir = PATH_CACHE.DS."heap";
+		}
+		array_map('unlink', glob($cacheDir.DS."*.cache"));
+	}
+
+	public function getId() {
+		return $this->_cacheId;
 	}
 }
 
