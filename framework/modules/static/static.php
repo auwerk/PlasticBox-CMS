@@ -17,6 +17,8 @@ defined('_PB_VALID') or die("Restricted access");
 class staticModule extends Module {
 	public function configure() {
 		$this->loadMetadata();
+
+		Cache::getInstance()->addDependency("id");
 	}
 }
 

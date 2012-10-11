@@ -55,11 +55,12 @@ final class Renderer {
 	// --------------------------------------------------------------------
 
 	protected function renderModule() {
-		ob_start();
-		Module::getInstance()->execute();
-		$moduleHtml = ob_get_contents();
-		ob_end_clean();
-		$this->assign("moduleHTML",$moduleHtml);
+		$module = Module::getInstance();
+		$cache = Cache::getInstance();
+		if ($cache->start($module->getName())) {
+			$module->execute();
+		}
+		$this->assign("moduleHTML",$cache->spew(false));
 	}
 
 	protected function renderHead($title="") {

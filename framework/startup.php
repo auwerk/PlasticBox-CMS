@@ -18,6 +18,7 @@ define('_PB_VALID',1);
 // Paths
 define("PATH_SITES"			,	PATH_ROOT.DS."sites");
 define("PATH_THIRD_PARTY"	,	PATH_ROOT.DS."third_party");
+define("PATH_CACHE"			,	PATH_ROOT.DS."cache");
 define("PATH_CLASSES"		,	PATH_FRAMEWORK.DS."classes");
 define("PATH_MODULES"		,	PATH_FRAMEWORK.DS."modules");
 define("PATH_WIDGETS"		,	PATH_FRAMEWORK.DS."widgets");
